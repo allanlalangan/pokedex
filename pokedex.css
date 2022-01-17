@@ -1,4 +1,33 @@
+:root {
+  --card-bg-color: hsl(180, 10%, 80%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: black;
   color: white;
+}
+
+.container {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  margin: auto;
+  width: 33%;
+  background-color: var(--card-bg-color);
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
+img {
+  width: 100%;
 }
