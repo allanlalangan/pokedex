@@ -1,4 +1,19 @@
-const pokedex = document.querySelector('.container');
+const pokedex = document.getElementById('container');
+
+const createCard = (pokemon) => {
+    return (
+        `<div class="card">
+                <p class="id">${pokemon.id}</p>
+                <h3>${pokemon.name}</h3>
+                <div class="img-container">
+                    <img src="${pokemon.sprites.other.home.front_default}" alt="">
+                </div>
+                <p class="poke-type">Types: ${pokemon.types.map(type => type.type.name).join(', ')}</p>
+                <p class="height">Height: ${pokemon.height}</p>
+                <p class="weight">Weight: ${pokemon.weight}</p>
+        </div>`
+    )
+}
 
 const fetchPokemon = () => {
     const url = 'https://pokeapi.co/api/v2/pokemon/';
@@ -9,32 +24,11 @@ const fetchPokemon = () => {
     }
     
     Promise.all(proms).then((pokedata) => {
-        pokedata.forEach(poke => {
-            poke.map(pokemon => {
-
-            })
+        pokedata.forEach(pokemon => {
+            pokedex.insertAdjacentHTML("beforeend", createCard(pokemon));
         })
     });
 
 }
 
 fetchPokemon()
-
-
-// const createCard = (pokemon) => {
-//     return (
-//         <div class="card">
-//                 <p class="id">pokemon.id</p>
-//                 <h3>pokemon.name</h3>
-//                 <div class="img-container">
-//                     <img src="pokemon.sprites.other.home[front_default]" alt="">
-//                 </div>
-//                 <p class="poke-type">Types: pokemon.types.type.name</p>
-//                 <p class="height">Height: pokemon.height</p>
-//                 <p class="weight">Weight: pokemon.weight</p>
-//         </div>
-//     )
-// }
-
-
-
