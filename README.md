@@ -1,1 +1,1 @@
-React Pokedex
+# Pokedex created with React
