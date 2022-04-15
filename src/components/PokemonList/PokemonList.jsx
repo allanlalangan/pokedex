@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { getPokemon } from '../../api/pokemonAPI';
 
-import PokemonCard from './PokemonCard/PokemonCard';
+import PokemonCard from '../PokemonCard/PokemonCard';
 import styles from './PokemonList.module.css';
 
 const PokemonList = () => {
@@ -15,7 +15,13 @@ const PokemonList = () => {
     <ul className={styles['pokemon-list']}>
       {pokemon?.map(({ id, name, types, image }) => (
         <Link to={`/pokemon/${name}`}>
-          <PokemonCard id={id} name={name} types={types} image={image} />
+          <PokemonCard
+            key={id}
+            id={id}
+            name={name}
+            types={types}
+            image={image}
+          />
         </Link>
       ))}
     </ul>

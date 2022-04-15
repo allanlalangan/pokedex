@@ -5,7 +5,13 @@
   --prim-color-dark: hsl(205, 85%, 25%);
   --prim-color-light: hsl(45, 100%, 80%);
   --ter-color: hsl(25, 80%, 75%);
-  --grey-color: hsl(175, 25%, 85%);
+  --grey-color: hsl(190, 25%, 85%);
+
+  /* light */
+  --light-bg: hsl(190, 25%, 90%);
+
+  --header-shadow: 0px 0.25rem 5px 0px rgba(0, 0, 0, 0.25);
+  --box-shadow: 0px 0.25rem 0.5rem 0rem rgba(0, 0, 0, 0.2);
 }
 
 * {
@@ -15,8 +21,8 @@
 }
 
 body {
-  background-color: var(--prim-color-dark);
-  color: var(--prim-color-light);
+  background-color: var(--light-bg);
+  color: var(--prim-color-dark);
   font-family: 'Prompt';
   margin: 1rem;
 }

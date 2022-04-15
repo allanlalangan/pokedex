@@ -1,8 +1,8 @@
-const Home = () => {
+const Index_page = () => {
   return (
-    <>
+    <section>
       <h2>Home</h2>
-    </>
+    </section>
   );
 };
-export default Home;
+export default Index_page;

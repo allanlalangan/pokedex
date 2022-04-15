@@ -1,6 +1,7 @@
 const getPokemon = async () => {
   try {
     const pokemon = [];
+
     for (let i = 1; i < 10; i++) {
       const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
       const data = await resp.json();
@@ -31,9 +32,9 @@ const getPokemon = async () => {
   }
 };
 
-const getPokemonDetails = async (id) => {
+const getPokemonDetails = async (name) => {
   try {
-    const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
     const data = await resp.json();
     console.log(data);
   } catch (error) {}

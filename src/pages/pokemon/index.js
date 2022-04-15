@@ -1,11 +1,11 @@
 import PokemonList from '../../components/PokemonList/PokemonList';
 
-const Pokemon = () => {
+const Pokemon_index = () => {
   return (
-    <>
+    <section>
       <h2>Kanto Region</h2>
       <PokemonList />
-    </>
+    </section>
   );
 };
-export default Pokemon;
+export default Pokemon_index;
