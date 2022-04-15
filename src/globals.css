@@ -18,4 +18,22 @@ body {
   background-color: var(--prim-color-dark);
   color: var(--prim-color-light);
   font-family: 'Prompt';
+  margin: 1rem;
+}
+
+main {
+  margin: 1rem;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }

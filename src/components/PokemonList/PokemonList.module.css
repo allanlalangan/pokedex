@@ -1,0 +1,8 @@
+.pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pokemon-link {
+  text-transform: capitalize;
+}
