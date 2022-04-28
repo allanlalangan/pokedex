@@ -5,23 +5,12 @@ import { getPokemon } from '../../api/pokemonAPI';
 import PokemonCard from '../PokemonCard/PokemonCard';
 import styles from './PokemonList.module.css';
 
-const PokemonList = () => {
-  const [pokemon, setPokemon] = useState([]);
-  useEffect(() => {
-    getPokemon().then((pokemon) => setPokemon(pokemon));
-  }, []);
-
+const PokemonList = ({ pokemon }) => {
   return (
     <ul className={styles['pokemon-list']}>
-      {pokemon?.map(({ id, name, types, image }) => (
-        <Link to={`/pokemon/${name}`}>
-          <PokemonCard
-            key={id}
-            id={id}
-            name={name}
-            types={types}
-            image={image}
-          />
+      {pokemon?.map(({ name, url }, i) => (
+        <Link key={i} to={`/pokemon/${name}`}>
+          <PokemonCard id={i + 1} name={name} url={url} />
         </Link>
       ))}
     </ul>

@@ -1,12 +1,15 @@
 import { useParams } from 'react-router-dom';
 import { getPokemonDetails } from '../../api/pokemonAPI';
-import PokemonCard from '../../components/PokemonCard/PokemonCard';
+import PokemonDetails from '../../components/PokemonDetails/PokemonDetails';
 
-const Pokemon_details = () => {
+const DetailsPage = () => {
+  const { pokemon } = useParams();
+  console.log(pokemon);
+
   return (
-    <section>
-      <h2>Details</h2>
-    </section>
+    <>
+      <PokemonDetails name={pokemon} />
+    </>
   );
 };
-export default Pokemon_details;
+export default DetailsPage;

@@ -1,14 +1,17 @@
 import styles from './PokemonCard.module.css';
 
-const PokemonCard = ({ id, name, types, image }) => {
+const PokemonCard = ({ id, name }) => {
   return (
-    <li key={id} className={styles['pokemon-card']}>
+    <li className={styles['pokemon-card']}>
       <div className={styles['pokemon-details']}>
-        <span className={styles.id}>{id}</span>
-        <p className={styles.name}>{name}</p>
-        <ul className={styles['types-list']}>
-          {types.map((type) => (
+        <div className={styles['pokemon-id']}>
+          <p className={styles.id}>{id}</p>
+          <p className={styles.name}>{name}</p>
+        </div>
+        {/* <ul className={styles['types-list']}>
+          {types.map((type, i) => (
             <li
+              key={i}
               className={`${styles['type-chip']} ${
                 styles[type + '-chip'] ? styles[type + '-chip'] : ''
               }`}
@@ -16,15 +19,15 @@ const PokemonCard = ({ id, name, types, image }) => {
               {type}
             </li>
           ))}
-        </ul>
+        </ul> */}
       </div>
-      <img
+      {/* <img
         src={image}
         alt={name}
         className={`${styles['id-' + id + '-image-fix']} ${
           styles['card-image']
         }`}
-      />
+      /> */}
     </li>
   );
 };

@@ -9,7 +9,7 @@
   background-color: var(--light-bg);
   margin: 1rem;
   padding: 1rem;
-  height: 25rem;
+  height: 15rem;
   width: 23rem;
 
   box-shadow: var(--box-shadow);
@@ -18,11 +18,26 @@
 }
 
 .pokemon-details {
+  /* width: 100%; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: space-between;
   z-index: 1;
 }
 
+.pokemon-id {
+  display: flex;
+  flex-direction: column;
+}
+
 .image-container {
-  width: 100%;
+  /* width: 100%; */
+}
+
+.types-list {
+  /* display: flex; */
 }
 
 .type-chip {
@@ -32,11 +47,12 @@
 }
 
 .card-image {
-  left: 0;
+  top: -10%;
+  left: 10%;
   position: absolute;
-  /* width: 22rem; */
+  width: 21rem;
 }
-
+/* 
 .id-2-image-fix {
   left: -6rem;
 }
@@ -48,4 +64,4 @@
 
 .id-9-image-fix {
   left: -3rem;
-}
+} */
