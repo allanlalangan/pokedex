@@ -34,11 +34,21 @@ const getPokemon = async (page, previous, next) => {
 
 const getPokemonPage = async () => {
   try {
+    const pokemon = [];
     const resp = await fetch(
       'https://pokeapi.co/api/v2/pokemon?offset=0&limit=20'
     );
     const data = await resp.json();
-    const pokemon = data.results;
+    const results = data.results;
+
+    results.forEach((poke, i) => {
+      const img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
+        i + 1
+      }.png`;
+      const cardData = { id: i + 1, name: poke.name, url: poke.url, img };
+      pokemon.push(cardData);
+    });
+
     return pokemon;
   } catch (error) {
     console.log(error.message);

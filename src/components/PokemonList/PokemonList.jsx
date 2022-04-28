@@ -8,9 +8,9 @@ import styles from './PokemonList.module.css';
 const PokemonList = ({ pokemon }) => {
   return (
     <ul className={styles['pokemon-list']}>
-      {pokemon?.map(({ name, url }, i) => (
-        <Link key={i} to={`/pokemon/${name}`}>
-          <PokemonCard id={i + 1} name={name} url={url} />
+      {pokemon?.map(({ name, url, img }, i) => (
+        <Link key={i} to={`/pokemon/${i + 1}`}>
+          <PokemonCard id={i + 1} name={name} url={url} img={img} />
         </Link>
       ))}
     </ul>
