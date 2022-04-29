@@ -1,14 +1,19 @@
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getPokemonDetails } from '../../api/pokemonAPI';
 import PokemonDetails from '../../components/PokemonDetails/PokemonDetails';
 
 const DetailsPage = () => {
-  const { pokemon } = useParams();
-  console.log(pokemon);
+  const { id } = useParams();
+  console.log(id);
+
+  useEffect(() => {
+    getPokemonDetails(id).then((data) => console.log(data));
+  }, []);
 
   return (
     <>
-      <PokemonDetails name={pokemon} />
+      <PokemonDetails id={id} />
     </>
   );
 };

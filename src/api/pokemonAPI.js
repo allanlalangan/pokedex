@@ -36,7 +36,7 @@ const getPokemonPage = async () => {
   try {
     const pokemon = [];
     const resp = await fetch(
-      'https://pokeapi.co/api/v2/pokemon?offset=0&limit=20'
+      'https://pokeapi.co/api/v2/pokemon?offset=0&limit=15'
     );
     const data = await resp.json();
     const results = data.results;
@@ -60,25 +60,26 @@ const getPokemonDetails = async (pokemonID) => {
     const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonID}`);
     const data = await resp.json();
 
-    const {
-      id,
-      name,
-      types,
-      sprites: {
-        other: {
-          'official-artwork': { front_default: image },
-        },
-      },
-    } = data;
+    // const {
+    //   id,
+    //   name,
+    //   types,
+    //   sprites: {
+    //     other: {
+    //       'official-artwork': { front_default: image },
+    //     },
+    //   },
+    // } = data;
 
-    const mutatedData = {
-      id,
-      name,
-      types: types.map((type) => type.type.name),
-      image,
-    };
+    // const mutatedData = {
+    //   id,
+    //   name,
+    //   types: types.map((type) => type.type.name),
+    //   image,
+    // };
 
-    return mutatedData;
+    // return mutatedData;
+    return data;
   } catch (error) {
     console.log(error.message);
   }
