@@ -1,9 +1,10 @@
 import styles from './PokemonDetails.module.css';
 
-const PokemonDetails = (props) => {
+const PokemonDetails = ({ pokemon }) => {
+  console.log(pokemon);
   return (
     <section>
-      <h2 className={styles['details-heading']}>{props.name}</h2>
+      <h2 className={styles['details-heading']}>{pokemon.name}</h2>
     </section>
   );
 };

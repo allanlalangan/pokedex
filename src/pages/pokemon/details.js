@@ -1,19 +1,21 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getPokemonDetails } from '../../api/pokemonAPI';
 import PokemonDetails from '../../components/PokemonDetails/PokemonDetails';
 
 const DetailsPage = () => {
+  const [pokemonDetails, setPokemonDetails] = useState({});
   const { id } = useParams();
-  console.log(id);
 
   useEffect(() => {
-    getPokemonDetails(id).then((data) => console.log(data));
+    getPokemonDetails(id).then((data) => {
+      setPokemonDetails(data);
+    });
   }, []);
 
   return (
     <>
-      <PokemonDetails id={id} />
+      <PokemonDetails pokemon={pokemonDetails} id={id} />
     </>
   );
 };

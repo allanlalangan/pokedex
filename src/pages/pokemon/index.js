@@ -20,7 +20,7 @@ const PokemonIndex = () => {
 
   return (
     <section>
-      <h2>Kanto Region</h2>
+      <h2>All Pokemon</h2>
       <PokemonList pokemon={pokemon} />
     </section>
   );
