@@ -60,26 +60,25 @@ const getPokemonDetails = async (pokemonID) => {
     const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonID}`);
     const data = await resp.json();
 
-    // const {
-    //   id,
-    //   name,
-    //   types,
-    //   sprites: {
-    //     other: {
-    //       'official-artwork': { front_default: image },
-    //     },
-    //   },
-    // } = data;
+    const {
+      id,
+      name,
+      types,
+      sprites: {
+        other: {
+          'official-artwork': { front_default: image },
+        },
+      },
+    } = data;
 
-    // const mutatedData = {
-    //   id,
-    //   name,
-    //   types: types.map((type) => type.type.name),
-    //   image,
-    // };
+    const mutatedData = {
+      id,
+      name,
+      types: types.map((type) => type.type.name),
+      image,
+    };
 
-    // return mutatedData;
-    return data;
+    return mutatedData;
   } catch (error) {
     console.log(error.message);
   }

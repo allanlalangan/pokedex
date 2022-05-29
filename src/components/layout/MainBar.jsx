@@ -9,7 +9,7 @@ const MainBar = () => {
     <header className={styles['main-bar']}>
       <Link to='/'>
         <h1>
-          <BiHome fontSize={'larger'} />
+          <BiHome fontSize={'xx-large'} />
         </h1>
       </Link>
       <Link to='/pokemon'>
