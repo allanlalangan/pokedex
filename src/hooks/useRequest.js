@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
-import { getPokemonPage } from '../api/pokemonAPI';
 import axios from 'axios';
 
-const useRequest = async (config, setData) => {
+const useRequest = async (config, setDataFn) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const sendRequest = async () => {
     try {
+      const resp = await axios(config.url, config);
     } catch (error) {}
   };
 
